@@ -3,6 +3,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const CSSExtract = new ExtractTextPlugin('styles.css');
 
+console.log(module.exports.mode);
+
 module.exports = (env) => {
 	const isProduction = env === 'production';
  return {
@@ -11,7 +13,7 @@ module.exports = (env) => {
 		path: path.join(__dirname, 'public'),
 		filename: 'bundle.js'
 	},
-	mode: 'development',
+	mode: isProduction ? 'production' : 'developement',
 	module: {
 		rules: [{
 			loader: 'babel-loader',
