@@ -61,7 +61,7 @@ test('should handle sort by date', () => {
 	wrapper.find('select').simulate('change', {
 		target: { value }
 	});
-	expect(sortByDate).toHaveBeenLastCalled();
+	expect(sortByDate).toHaveBeenCalled();
 
 });
 
